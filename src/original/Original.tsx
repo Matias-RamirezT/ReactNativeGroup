@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './styles.css';
 
 interface Character {
   id: number;
@@ -46,52 +47,72 @@ export default function Original() {
   };
 
   return (
-    <div>
-      <h1>Entrenamientos Ninja</h1>
-      {!selected && (
-        <div>
-          <h2>Elige tu ninja</h2>
+  <div className="game-container">
+    <h1>Entrenamientos Ninja</h1>
+
+    {!selected && (
+      <div>
+        <h2>Elige tu ninja</h2>
+
+        <div className="character-list">
           {characters.slice(0, 10).map((c) => (
-            <button key={c.id} onClick={() => handleSelect(c)}>
+            <button
+              className="btn"
+              key={c.id}
+              onClick={() => handleSelect(c)}
+            >
               {c.name}
             </button>
           ))}
         </div>
-      )}
+      </div>
+    )}
 
-      {selected && (
+    {selected && (
+      <div className="card">
+        <h2>{selected.name}</h2>
+
+        {selected.images?.[0] && (
+          <img
+            src={selected.images[0]}
+            alt={selected.name}
+          />
+        )}
+
+        <p>Aldea: {selected.affiliation?.[0] ?? "Desconocida"}</p>
+        <p>Jutsu principal: {selected.jutsu?.[0] ?? "Desconocido"}</p>
+        <p>Tipo de chakra: {selected.natureType?.[0] ?? "Desconocido"}</p>
+
+        <h3 className="level">Nivel ninja: {level}</h3>
+
         <div>
-          <h2>{selected.name}</h2>
-          {selected.images?.[0] && (
-            <img
-              src={selected.images[0]}
-              alt={selected.name}
-              width={200}
-            />
-          )}
-          <p>Aldea: {selected.affiliation?.[0] ?? "Desconocida"}</p>
-          <p>Jutsu principal: {selected.jutsu?.[0] ?? "Desconocido"}</p>
-          <p>Tipo de chakra: {selected.natureType?.[0] ?? "Desconocido"}</p>
-          <h3>Nivel ninja: {level}</h3>
-          <div>
-            <button onClick={() => train("Ninjutsu")}>Entrenar Ninjutsu</button>
-            <button onClick={() => train("Taijutsu")}>Entrenar Taijutsu</button>
-            <button onClick={() => train("Resistencia")}>Entrenar Resistencia</button>
-          </div>
-          <button onClick={() => setSelected(null)}>Elegir otro ninja</button>
+          <button className="btn" onClick={() => train("Ninjutsu")}>
+            Entrenar Ninjutsu
+          </button>
+          <button className="btn" onClick={() => train("Taijutsu")}>
+            Entrenar Taijutsu
+          </button>
+          <button className="btn" onClick={() => train("Resistencia")}>
+            Entrenar Resistencia
+          </button>
         </div>
-      )}
-      
-      {log.length > 0 && (
-        <div>
-          <h3>Registro de entrenamiento</h3>
-          <ul>
-            {log.map((entry, idx) => (
-              <li key={idx}>{entry}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+
+        <button className="btn" onClick={() => setSelected(null)}>
+          Elegir otro ninja
+        </button>
+      </div>
+    )}
+
+    {log.length > 0 && (
+      <div className="log">
+        <h3>Registro de entrenamiento</h3>
+        <ul>
+          {log.map((entry, idx) => (
+            <li key={idx}>{entry}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+);
 }

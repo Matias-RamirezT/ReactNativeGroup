@@ -1,0 +1,54 @@
+.home {
+    padding: 40px;
+    background: #020617;
+    color: white;
+    min-height: 100vh;
+
+    display: flex;              /* 🔥 centra todo */
+    justify-content: center;    /* 🔥 horizontal */
+    align-items: center;        /* 🔥 vertical */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    max-width: 1100px;   /* 🔥 clave para centrar */
+    width: 100%;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #facc15;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #cbd5f5;
+}
+
+.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(250, 204, 21, 0.4);
+    transition: 0.3s;
+}
+
+.hero-img img:hover {
+    transform: scale(1.05);
+}

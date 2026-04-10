@@ -1,9 +1,8 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import Inicio from "./menu/Aldea";
-import Ajustes from "./menu/Jutsus";
-import Cocina from "./menu/Shinobis";
+import Inicio from "./inicio/incio";
 import Original from "./original/Original";
 import "./App.css";
+import Lista from "./lista/lista";
 
 export default function App() {
   return (
@@ -11,15 +10,11 @@ export default function App() {
       <nav className="naruto-navbar">
       <div className="naruto-links">
        <NavLink to="/" className="naruto-link">
-      Aldea
+      Inicio
     </NavLink>
 
-    <NavLink to="/ajustes" className="naruto-link">
-      Jutsus
-    </NavLink>
-
-    <NavLink to="/cocina" className="naruto-link">
-      Shinobis
+    <NavLink to="/lista" className="naruto-link">
+      Lista
     </NavLink>
 
         <NavLink to="/original" className="naruto-link">
@@ -30,9 +25,8 @@ export default function App() {
 
       <main className="naruto-content">
         <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/ajustes" element={<Ajustes />} />
-          <Route path="/cocina" element={<Cocina />} />
+          <Route path="/" element={<Inicio/>} />
+          <Route path="/lista" element={<Lista />} />
           <Route path="/original" element={<Original />} />
         </Routes>
       </main>

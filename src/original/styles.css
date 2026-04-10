@@ -1,0 +1,95 @@
+/* ====== CONTAINER ====== */
+.game-container {
+  padding: 40px;
+  background: #020617;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ====== TITULOS ====== */
+.game-container h1 {
+  font-size: 2.5rem;
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+.game-container h2 {
+  margin-top: 20px;
+}
+
+/* ====== BOTONES ====== */
+.btn {
+  margin: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2d;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #334155;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(250, 204, 21, 0.4);
+}
+
+/* ====== GRID PERSONAJES ====== */
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ====== CARD ====== */
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  display: inline-block;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+}
+
+.card img {
+  border-radius: 12px;
+  margin: 10px 0;
+  width: 200px;
+}
+
+/* ====== INFO ====== */
+.card p {
+  margin: 5px 0;
+  color: #cbd5f5;
+}
+
+/* ====== NIVEL ====== */
+.level {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #22c55e;
+}
+
+/* ====== LOG ====== */
+.log {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.log ul {
+  list-style: none;
+  padding: 0;
+}
+
+.log li {
+  background: #1e293b;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}

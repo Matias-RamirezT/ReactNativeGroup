@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./styles.css";
 
 interface CharactersOptions {
     id: number;
@@ -18,11 +19,7 @@ export default function Lista(){
             try{
                 const res = await fetch('https://dattebayo-api.onrender.com/characters');
                 const data = await res.json();
-
-                console.log(data);
-
                 setCharacters(data.characters); 
-
             }catch(error){
                 console.log('Error searching data: ', error);
             }
@@ -32,18 +29,25 @@ export default function Lista(){
     }, []);
 
     return (
-        <div>
-            <h2>Characters</h2>
+        <div className="container">
+            <h2 className="title">Naruto Characters</h2>
 
-            {characters.map((character) => (
-                <div key={character.id}>
-                    <h3>{character.name}</h3>
-                    <p>{character.jutsu?.[0]}</p>
-                    <p>{character.natureType?.[0]}</p>
-                    <p>{character.affiliation?.[0]}</p>
-                    <img src={character.images?.[0]} alt={character.name} width="150"/>
-                </div>
-            ))}
+            <div className="grid">
+                {characters.map((character) => (
+                    <div className="card" key={character.id}>
+                        <img 
+                            src={character.images?.[0]} 
+                            alt={character.name} 
+                        />
+
+                        <h3>{character.name}</h3>
+
+                        <p><strong>Jutsu:</strong> {character.jutsu?.[0]}</p>
+                        <p><strong>Chakra:</strong> {character.natureType?.[0]}</p>
+                        <p><strong>Aldea:</strong> {character.affiliation?.[0]}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
