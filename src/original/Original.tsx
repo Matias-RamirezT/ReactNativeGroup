@@ -48,7 +48,6 @@ export default function Original() {
   return (
     <div>
       <h1>Entrenamientos Ninja</h1>
-
       {!selected && (
         <div>
           <h2>Elige tu ninja</h2>
@@ -73,7 +72,6 @@ export default function Original() {
           <p>Aldea: {selected.affiliation?.[0] ?? "Desconocida"}</p>
           <p>Jutsu principal: {selected.jutsu?.[0] ?? "Desconocido"}</p>
           <p>Tipo de chakra: {selected.natureType?.[0] ?? "Desconocido"}</p>
-
           <h3>Nivel ninja: {level}</h3>
           <div>
             <button onClick={() => train("Ninjutsu")}>Entrenar Ninjutsu</button>
@@ -83,7 +81,7 @@ export default function Original() {
           <button onClick={() => setSelected(null)}>Elegir otro ninja</button>
         </div>
       )}
-
+      
       {log.length > 0 && (
         <div>
           <h3>Registro de entrenamiento</h3>

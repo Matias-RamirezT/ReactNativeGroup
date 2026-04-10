@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.original-container * {
+  all: unset;
+  all: revert-layer;
+}
+
 body {
   margin: 0;
   padding: 0;

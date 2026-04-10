@@ -1,101 +1,94 @@
-/* Naruto Theme */
+/* ====== THEME GLOBAL ====== */
 
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #ff9a3c, #d83a00);
-  color: white;
-  font-family: "Trebuchet MS", sans-serif;
+  background: #0d0d0f;
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
 }
 
-/* Navbar */
+/* ====== NAVBAR ====== */
+
 .naruto-navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   padding: 18px 40px;
-  background: rgba(10, 10, 10, 0.92);
-
-  border-bottom: 4px solid #ffcc00;
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6);
+  background: #111113;
+  border-bottom: 2px solid #2a2a2d;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo */
-.naruto-logo {
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0;
-  color: #ffcc00;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
+/* ====== NAV LINKS ====== */
 
-/* Links container */
 .naruto-links {
   display: flex;
   gap: 25px;
 }
 
-/* Links */
 .naruto-link {
   text-decoration: none;
-  color: white;
-  font-size: 18px;
+  color: #cfcfcf;
+  font-size: 16px;
   font-weight: 600;
-  text-transform: uppercase;
 
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
 
-  border: 2px solid transparent;
-  transition: 0.3s;
+  background: #1a1a1d;
+  border: 1px solid #2a2a2d;
+
+  transition: 0.25s ease;
 }
 
 .naruto-link:hover {
-  color: #ffcc00;
-  border: 2px solid #ffcc00;
-  box-shadow: 0px 0px 12px rgba(255, 204, 0, 0.6);
+  background: #27272b;
+  border-color: #3a3a3f;
+  color: #ffffff;
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.08);
 }
 
-/* Active Link */
 .naruto-active {
-  text-decoration: none;
-  color: black;
-  background: #ffcc00;
-
-  font-size: 18px;
-  font-weight: 800;
-  text-transform: uppercase;
-
-  padding: 8px 14px;
-  border-radius: 8px;
-
-  box-shadow: 0px 0px 18px rgba(255, 204, 0, 0.9);
-  transition: 0.3s;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  border-color: #ffffff;
 }
 
-/* Main content */
+/* ====== PAGE CONTENT WRAPPER ====== */
+
 .naruto-content {
-  padding: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Titles */
-h1 {
-  font-size: 34px;
-  font-weight: 900;
-  color: white;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+/* ====== TITLES ====== */
+
+.naruto-content h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15);
 }
 
-/* Cards (para cuando consumas la API) */
+/* ====== CARD STYLE (para las pantallas del menú) ====== */
+
 .card {
-  background: rgba(0, 0, 0, 0.75);
-  border: 2px solid #ffcc00;
+  background: #161618;
+  border: 1px solid #2a2a2d;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-top: 15px;
-  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.6);
+
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.4);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  border-color: #3a3a3f;
+  transform: translateY(-3px);
 }
