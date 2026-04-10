@@ -8,37 +8,20 @@ export default function App() {
   return (
     <>
       <nav className="naruto-navbar">
-        <h2 className="naruto-logo">忍 Naruto App</h2>
+      <div className="naruto-links">
+       <NavLink to="/" className="naruto-link">
+      Aldea
+    </NavLink>
 
-        <div className="naruto-links">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "naruto-active" : "naruto-link"
-            }
-          >
-            Aldea
-          </NavLink>
+    <NavLink to="/ajustes" className="naruto-link">
+      Jutsus
+    </NavLink>
 
-          <NavLink
-            to="/ajustes"
-            className={({ isActive }) =>
-              isActive ? "naruto-active" : "naruto-link"
-            }
-          >
-            Jutsus
-          </NavLink>
-
-          <NavLink
-            to="/cocina"
-            className={({ isActive }) =>
-              isActive ? "naruto-active" : "naruto-link"
-            }
-          >
-            Shinobis
-          </NavLink>
-        </div>
-      </nav>
+    <NavLink to="/cocina" className="naruto-link">
+      Shinobis
+    </NavLink>
+  </div>
+</nav>
 
       <main className="naruto-content">
         <Routes>
