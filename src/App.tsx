@@ -1,42 +1,46 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import Inicio from "./menu/Inicio";
-import Ajustes from "./menu/Ajustes";
-import Cocina from "./menu/Cocina";
+import Inicio from "./menu/Aldea";
+import Ajustes from "./menu/Jutsus";
+import Cocina from "./menu/Shinobis";
 import "./App.css";
 
 export default function App() {
   return (
     <>
-      <nav className="bb-navbar">
-        <h2 className="bb-logo">
-          Br<span className="bb-logo-box">Ba</span> App
-        </h2>
+      <nav className="naruto-navbar">
+        <h2 className="naruto-logo">忍 Naruto App</h2>
 
-        <div className="bb-links">
+        <div className="naruto-links">
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? "bb-active" : "bb-link")}
+            className={({ isActive }) =>
+              isActive ? "naruto-active" : "naruto-link"
+            }
           >
-            Inicio
+            Aldea
           </NavLink>
 
           <NavLink
             to="/ajustes"
-            className={({ isActive }) => (isActive ? "bb-active" : "bb-link")}
+            className={({ isActive }) =>
+              isActive ? "naruto-active" : "naruto-link"
+            }
           >
-            Ajustes
+            Jutsus
           </NavLink>
 
           <NavLink
             to="/cocina"
-            className={({ isActive }) => (isActive ? "bb-active" : "bb-link")}
+            className={({ isActive }) =>
+              isActive ? "naruto-active" : "naruto-link"
+            }
           >
-            Cocina
+            Shinobis
           </NavLink>
         </div>
       </nav>
 
-      <main className="bb-content">
+      <main className="naruto-content">
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/ajustes" element={<Ajustes />} />
